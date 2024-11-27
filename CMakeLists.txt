@@ -13,6 +13,12 @@ find_package(Qt6 6.8 COMPONENTS Quick QuickControls2 LinguistTools REQUIRED)
 qt_policy(SET QTP0001 NEW)
 qt_policy(SET QTP0004 NEW)
 
+find_package(VTK REQUIRED
+    CommonCore
+    FiltersSources
+    GUISupportQtQuick
+)
+
 set(PROJECT_TESTS TRUE)
 include(config.cmake)
 
@@ -51,16 +57,18 @@ qt_add_qml_module(${APPLICATION_NAME}
     QML_FILES ${PROJECT_QMLS}
 )
 
-target_include_directories(${APPLICATION_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${APPLICATION_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include ${VTK_INCLUDE_DIRS})
 
 target_link_libraries(${APPLICATION_NAME} PRIVATE
     Qt6::Quick
     Qt6::QuickControls2
+    ${VTK_LIBRARIES}
     Styleplugin
     Utilityplugin
     Utility
     # add modules here append "plugin" to the name
 )
+vtk_module_autoinit( TARGETS ${APPLICATION_NAME} MODULES ${VTK_LIBRARIES} )
 
 file(GLOB_RECURSE ALL_QMLS RELATIVE ${CMAKE_SOURCE_DIR} *.qml)
 

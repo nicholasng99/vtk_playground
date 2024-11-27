@@ -2,6 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 
+#include <QQuickVTKItem.h>
+
 #include "SingletonGetter.hpp"
 #include "Constants.hpp"
 #include "LogManager.hpp"
@@ -9,6 +11,7 @@
 
 int main(int argc, char *argv[])
 {
+    QQuickVTKItem::setGraphicsApi();
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle("Material");
     // log manager must be init after application is created

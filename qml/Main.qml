@@ -10,6 +10,10 @@ ApplicationWindow {
     width: Style.screenWidth
     height: Style.screenHeight
 
+    VtkItem {
+        anchors.fill: parent
+    }
+
     Component.onCompleted: {
         console.log(Settings.getValue("Language"));
     }
