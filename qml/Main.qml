@@ -6,7 +6,7 @@ import Utility
 
 ApplicationWindow {
     visible: true
-    title: qsTr("Project Name")
+    title: qsTr("Vtk Playground")
     width: Style.screenWidth
     height: Style.screenHeight
 

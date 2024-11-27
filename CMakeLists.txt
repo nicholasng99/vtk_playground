@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
 cmake_policy(SET CMP0099 NEW)
 
-set(APPLICATION_NAME "ProjectName")
+set(APPLICATION_NAME "VtkPlayground")
 
 project(${APPLICATION_NAME} VERSION 0.1 LANGUAGES CXX)
 
