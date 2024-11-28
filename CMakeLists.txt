@@ -16,6 +16,7 @@ qt_policy(SET QTP0004 NEW)
 find_package(VTK REQUIRED
     CommonCore
     FiltersSources
+    IOGeometry 
     GUISupportQtQuick
 )
 
