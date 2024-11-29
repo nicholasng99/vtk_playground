@@ -1,0 +1,1 @@
+install VTK with DVTK_MODULE_ENABLE_GUISupportQtQuick=WANT (String)
